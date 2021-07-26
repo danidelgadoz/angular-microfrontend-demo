@@ -1,16 +1,22 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { createCustomElement } from '@angular/elements';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [ WeatherComponent ],
+  imports: [ BrowserModule, HttpClientModule ],
+  providers: []
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    private injector: Injector
+  ) { }
+
+  ngDoBootstrap() {
+    const weathercomponent = createCustomElement(WeatherComponent, {injector: this.injector});
+    customElements.define('app-weather', weathercomponent);
+  }
+}
