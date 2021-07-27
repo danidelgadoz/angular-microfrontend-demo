@@ -3,11 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "bundle:microfront": "ng build --project weather-microfront --configuration production --output-hashing none --single-bundle true"
+    "start:weather-microfront": "ng serve --project weather-microfront --port 4201",
+    "bundle:weather-microfront": "ng build --project weather-microfront --configuration production --output-hashing none --single-bundle true"
   },
   "private": true,
   "dependencies": {
