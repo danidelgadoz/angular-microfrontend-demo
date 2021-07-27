@@ -1,15 +1,23 @@
 # HostPython
 
-This project was created with Flask (Python micro framework)
+This project was created with Flask (Python micro framework).
 
-## Installment
+## Running the Application
 
-1. `python3 -m venv venv`
-2. `source ./venv/bin/activate`
-3. `pip install -r requirements.txt`
+Make sure you have installed Python, then:
 
+1. Open terminal on **host-python** directory.
 
-## Start development server
-1. `export FLASK_APP=app.py`
-2. `export FLASK_ENV=development`
-3. `flask run`
+1. Run `python3 -m venv venv` (just once for installing).
+
+1. Run `source ./venv/bin/activate`.
+
+1. Run `pip install -r requirements.txt` (just once for installing).
+
+1. Run `export FLASK_APP=app.py`.
+
+1. Run `export FLASK_ENV=development`.
+
+1. Run `flask run`.
+
+Done, navigate to `http://localhost:5000/`.
